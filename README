@@ -1,0 +1,6 @@
+Pasos para ejecutar aplicacion:
+- Instalar node, en caso de no tenerlo
+- Instalar bower, en caso de no tenerlo
+- Ejecutar `npm start`
+- Abrir el navegador en: http://localhost:8000/app/index.html
+

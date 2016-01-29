@@ -1,0 +1,58 @@
+<div class="row" ng-controller="TodosCtrl">
+    <div class="large-10 columns">
+    <div data-alert  ng-show="msg" class="alert-box">{{msg}}</div>
+            
+        <form ng-submit="addFormSubmit()" ng-show="addFormShow">
+            <h3>Add Todo</h3>
+    <!--Add Form-->
+            <div class="row">
+                <div class="large-4 columns">
+                    <label>Title:<input type="text" ng-model="title"  required> 
+                    </label>
+                </div>
+                <div class="large-4 columns">
+                    <label>Author:<input type="text" ng-model="author" </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-12 columns">
+                    <label>Description
+                        <textarea rows="6" cols="50" ng-model="description"  required></textarea>
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                    <div class="large-12 columns"> <input type="submit" value="Add Todo" class="button">
+                </div>
+                    </div>
+        </form>
+            
+
+            
+    
+            <h3>List: ({{todos.length}})</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th width="200px">Title:</th>
+                        <th width="200px">Description</th>
+                        <th width="25%">Author</th>
+                        <th width="25%">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="todo in todos">
+                        <td>{{todo.title}}</td>
+                        <td>{{todo.description}}</td>
+                        <td>{{todo.author}}</td>
+                        <td> <a class="button tiny alert" ng-click="removeTodo(todo)">Delete</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="small-12 large-2 columns">
+            <a class="button large" ng-click="showAddForm()" ng-hide="addFormShow">+</a>
+            <a class="button large" ng-click="hide()" ng-show="addFormShow">-</a>
+        </div>
+    </div>
+
